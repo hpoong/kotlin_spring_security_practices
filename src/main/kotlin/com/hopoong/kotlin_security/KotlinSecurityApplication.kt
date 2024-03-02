@@ -1,4 +1,4 @@
-package com.login.study.kotlin_security
+package com.hopoong.kotlin_security
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

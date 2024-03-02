@@ -7,7 +7,7 @@ plugins {
 	kotlin("plugin.spring") version "1.3.50"
 }
 
-group = "com.login.study"
+group = "com.hopoong.kotlin_security"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
@@ -16,6 +16,7 @@ repositories {
 }
 
 dependencies {
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	implementation("org.springframework.boot:spring-boot-starter-web")

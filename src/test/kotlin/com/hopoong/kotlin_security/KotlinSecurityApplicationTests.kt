@@ -1,4 +1,4 @@
-package com.login.study.kotlin_security
+package com.hopoong.kotlin_security
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

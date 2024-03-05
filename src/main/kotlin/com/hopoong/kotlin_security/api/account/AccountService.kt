@@ -17,4 +17,10 @@ class AccountService(
             ?: throw UsernameNotFoundException("$username Can Not Found")
     }
 
+
+    fun saveAcount(account: AccountModel): AccountModel {
+        account.password = this.passwordEncoder.encode(account.password);
+        return accountRepository.save(account);
+    }
+
 }

@@ -2,10 +2,12 @@ package com.hopoong.kotlin_security.config.security
 
 import com.hopoong.kotlin_security.api.account.AccountService
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.context.annotation.Bean
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.crypto.password.PasswordEncoder
 
 @EnableWebSecurity
@@ -16,7 +18,6 @@ class SecurityConfig(
     companion object {
         const val LOGIN_SUCCESS_URL: String = "/view/success"
     }
-
     override fun configure(auth: AuthenticationManagerBuilder) {
             auth.userDetailsService(accountService)
                 .passwordEncoder(passwordEncoder)
@@ -30,6 +31,11 @@ class SecurityConfig(
             .and()
             .authorizeRequests()
             .anyRequest().authenticated()
+    }
+
+    @Bean
+    fun passwordEncoder(): PasswordEncoder {
+        return BCryptPasswordEncoder()
     }
 
 }

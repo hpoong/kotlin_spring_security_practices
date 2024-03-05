@@ -1,3 +1,39 @@
 
 server:
   port: 4100
+
+
+#spring:
+#  datasource:
+#    url: jdbc:mariadb://${DB_Address}:23306/${DB_Name}
+#    username: ${DB_Username}
+#    password: ${DB_Password}
+#    driverClassName: org.mariadb.jdbc.Driver
+
+#spring:
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+#      show-sql: true # DDL 출
+
+
+
+spring:
+  datasource:
+    url: jdbc:mariadb://${DB_Address}:23306/${DB_Name}
+    username: ${DB_Username}
+    password: ${DB_Password}
+    driverClassName: org.mariadb.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+        show_sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      generate-ddl: true
+      properties:
+      temp:
+        use_jdbc_metadata_defaults: false

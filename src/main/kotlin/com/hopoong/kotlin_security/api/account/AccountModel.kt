@@ -8,6 +8,7 @@ import java.util.stream.Collectors
 import javax.persistence.*
 
 @Entity
+@Table(name = "acc_user")
 data class AccountModel(
     @Id @GeneratedValue
     var id: Long? = null,
@@ -28,5 +29,4 @@ data class AccountModel(
             this.roles.stream().map { SimpleGrantedAuthority("ROLE_$it") }.collect(Collectors.toSet())
         )
     }
-
 }

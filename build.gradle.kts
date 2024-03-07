@@ -27,6 +27,10 @@ dependencies {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
 	testImplementation("org.springframework.security:spring-security-test")
+
+	// mariadb
+	implementation("org.mariadb.jdbc:mariadb-java-client:3.3.2")
+
 }
 
 tasks.withType<Test> {

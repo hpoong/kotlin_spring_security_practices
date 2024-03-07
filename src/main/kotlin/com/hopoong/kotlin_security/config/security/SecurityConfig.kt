@@ -32,10 +32,4 @@ class SecurityConfig(
             .authorizeRequests()
             .anyRequest().authenticated()
     }
-
-    @Bean
-    fun passwordEncoder(): PasswordEncoder {
-        return BCryptPasswordEncoder()
-    }
-
 }

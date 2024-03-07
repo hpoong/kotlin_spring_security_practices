@@ -10,9 +10,12 @@ import javax.persistence.*
 @Entity
 @Table(name = "acc_user")
 data class AccountModel(
-    @Id @GeneratedValue
+
+    @Id @GeneratedValue // primary key
     var id: Long? = null,
+
     var email: String,
+
     var password: String,
 
     @Enumerated(EnumType.STRING)
